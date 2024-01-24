@@ -28,7 +28,10 @@ export default function Home() {
   /**
    * useEffect to trigger the `fetchImages` function whenever `page` updates
    */
-  // useEffect here
+  useEffect(() => {
+    fetchImages();
+  }, [page]);
+
   
 
   // ------- Render --------
