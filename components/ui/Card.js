@@ -7,6 +7,8 @@ export default function Card({
   imgAlt = 'placeholder',
   imgSrc = '/placeholder.jpg',
   shotBy,
+  newLimit,
+  isLast,
 }) {
   /**
    * Select the Card component with useRef
