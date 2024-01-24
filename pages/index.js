@@ -14,12 +14,22 @@ export default function Home() {
   /**
    * Fetch images from the Unsplash API and append the results to your `images` array
    */
-  const fetchImages = async () => {};
+  const fetchImages = async () => {
+    const response = await fetch(`${BASE_URL}?query=tea&page=${page}`, {
+      headers: {
+        Authorization: `Client-ID ${process.env.NEXT_PUBLIC_UNSPLASH}`,
+      },
+    });
+    const { results } = await response.json();
+    setImages((prev) => [...prev, ...results]);
+  }; 
+
 
   /**
    * useEffect to trigger the `fetchImages` function whenever `page` updates
    */
   // useEffect here
+  
 
   // ------- Render --------
   return (
